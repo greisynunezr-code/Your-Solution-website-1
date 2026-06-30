@@ -55,9 +55,12 @@
 
   /* Slim, dark sticky header */
   #nav{ background:#000000; }
-  #nav .nav-inner{ height:84px; transition:height .3s ease; }
+  #nav .nav-inner{ min-height:64px; padding:12px 0; transition:height .3s ease; }
   #nav.scrolled{ background:#000000; border-bottom:1px solid rgba(255,255,255,.08); }
-  #nav.scrolled .nav-inner{ height:68px; }
+  @media (min-width:640px){
+    #nav .nav-inner{ height:84px; min-height:0; padding:0; }
+    #nav.scrolled .nav-inner{ height:68px; }
+  }
 
   .hero-bg{
     background:#0e3050;
@@ -177,7 +180,7 @@
 <!-- ============ NAV ============ -->
 <header id="nav" class="sticky top-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="nav-inner flex items-center justify-between">
+    <div class="nav-inner flex flex-col items-center gap-3 sm:flex-row sm:justify-between sm:gap-0">
       <a href="#top" class="flex items-center gap-3 group">
         <img src="Brand_assets/logo.png" alt="Your Solution Cooling &amp; Appliance Repair logo" class="w-16 h-16 object-contain transition-transform duration-500 group-hover:rotate-3" />
         <img src="Brand_assets/name.png" alt="Your Solution — Cooling &amp; Appliance Repair" class="h-11 w-auto" />
