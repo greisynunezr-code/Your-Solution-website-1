@@ -46,7 +46,7 @@
 <style>
   :root{ --navy:#0A2540; --glacier:#1B6FE3; --frost:#19BDE8; --ember:#FF7A1A; --ice:#E8F4FB; --slate:#5A6B7B; }
   html{ scroll-behavior:smooth; }
-  body{ font-family:'Poppins',sans-serif; color:var(--navy); background:#fff; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body{ font-family:'Poppins',sans-serif; color:var(--navy); background:#fff; -webkit-font-smoothing:antialiased; overflow-x:hidden; overflow-x:clip; }
   ::selection{ background:var(--frost); color:var(--navy); }
 
   .display{ font-style:italic; font-weight:700; letter-spacing:-.03em; line-height:1.02; }
@@ -100,7 +100,7 @@
 
   .marquee{ display:flex; gap:4rem; width:max-content; animation:scrollX 32s linear infinite; }
   @keyframes scrollX{ to{ transform:translateX(-50%); } }
-  .marquee-mask{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
+  .marquee-mask{ overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
 
   .svc{ transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease; }
   .svc:hover{ transform:translateY(-4px); box-shadow:0 16px 36px -24px rgba(10,37,64,.22); }
